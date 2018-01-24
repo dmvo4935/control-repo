@@ -1,4 +1,5 @@
-forge "http://forge.puppetlabs.com"
+#forge "http://forge.puppetlabs.com"
+forge "https://forge.puppet.com"
 
 # Modules from the Puppet Forge
 mod "puppetlabs/inifile",                   '2.0.0'
