@@ -23,5 +23,5 @@ mod "kreeuwijk/vmtools_win",                '1.0.4'
 
 # Modules from Gitlab (needs to have your control-repo at minimum)
 mod 'control-repo',
-  :git    => 'git@gitlab.inf.puppet.vm:puppet/control-repo.git',
+  :git    => 'git@github.com:dmvo4935/control-repo.git',
   :branch => 'production'
