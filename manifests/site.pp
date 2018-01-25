@@ -32,7 +32,19 @@ node default {
 }
 
 node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
-    file {'c:\test.txt':
-      ensure => 'absent'
+    windowsfeature { 'Web-WebServer':
+    ensure             => present,
+    installsubfeatures => true,
    }
+   
+   iis_site { 'Default Web Site':
+     ensure   => 'started',
+     app_pool => 'DefaultAppPool',
+     ip       => '*',
+     path     => 'C:\InetPub\WWWRoot',
+     port     => '80',
+     protocol => 'http',
+     ssl      => 'false',
+     }
+   
 }
