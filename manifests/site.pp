@@ -33,6 +33,6 @@ node default {
 
 node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
     file {'c:\test.txt':
-      content => inline_template("Created for testing"),
+      ensure => 'absent'
    }
 }
