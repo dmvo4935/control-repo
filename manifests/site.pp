@@ -31,7 +31,7 @@ node default {
   #   class { 'my_class': }
 }
 
-node ec2amaz-pcdm8f8.eu-central-1.compute.internal {
+node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
     file {'c:\test.txt':
       content => inline_template("Created for testing"),
    }
