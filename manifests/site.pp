@@ -45,7 +45,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
      port     => '80',
      protocol => 'http',
      ssl      => 'false',
-     notify   =>  Windowsfeature ['Web-WebServer']
+     notify   =>  Windowsfeature ['Web-WebServer'],
      }
    
 }
