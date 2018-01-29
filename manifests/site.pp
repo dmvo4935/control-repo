@@ -37,15 +37,15 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
     installsubfeatures => true,
    }
    
- #  iis_site { 'Default Web Site':
- #    ensure   => 'started',
- #    app_pool => 'DefaultAppPool',
- #    ip       => '*',
- #    path     => 'C:\InetPub\WWWRoot',
- #    port     => '80',
- #    protocol => 'http',
- #    ssl      => 'false',
- #    notify   =>  Windowsfeature ['Web-WebServer'],
- #    }
+   iis_site { 'Default Web Site':
+     ensure   => 'started',
+     app_pool => 'DefaultAppPool',
+     ip       => '*',
+     path     => 'C:\inetpub\wwwroot',
+     port     => '80',
+     protocol => 'http',
+     ssl      => 'false',
+     notify   =>  Windowsfeature ['Web-WebServer'],
+     }
    
 }
