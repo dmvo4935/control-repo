@@ -35,13 +35,13 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
     windowsfeature { 'Web-WebServer':
     ensure             => present,
     installsubfeatures => true,
-   }
+   } 
    
    iis_site { 'Default Web Site':
      ensure           => 'started',
      applicationpool  => 'DefaultAppPool',
-     physicalpath      => 'C:\inetpub\wwwroot',
-     notify   =>  Windowsfeature['Web-WebServer'],
+     physicalpath     => 'C:\inetpub\wwwroot',
+     require          =>  Windowsfeature['Web-WebServer'],
      }
    
 }
