@@ -38,13 +38,9 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
    }
    
    iis_site { 'Default Web Site':
-     ensure   => 'started',
-     app_pool => 'DefaultAppPool',
-     ip       => '*',
-     path     => 'C:\inetpub\wwwroot',
-     port     => '80',
-     protocol => 'http',
-     ssl      => 'false',
+     ensure           => 'started',
+     applicationpool  => 'DefaultAppPool',
+     pysicalpath      => 'C:\inetpub\wwwroot',
      notify   =>  Windowsfeature['Web-WebServer'],
      }
    
