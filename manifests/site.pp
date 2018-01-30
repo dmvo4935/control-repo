@@ -37,11 +37,16 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
     installsubfeatures => true,
    } 
    
+   $iis_features =  ['Web-Server','Web-Scripting-Tools']
+    iis_feature { $iis_features:
+    ensure => present,
+    notify => Iis_site['Default Web Site']
+  } 
+   
    iis_site { 'Default Web Site':
      ensure           => 'started',
      applicationpool  => 'DefaultAppPool',
      physicalpath     => 'C:\inetpub\wwwroot',
-     require          =>  Windowsfeature['Web-WebServer'],
      }
    
 }
