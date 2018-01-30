@@ -40,7 +40,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
    iis_site { 'Default Web Site':
      ensure           => 'started',
      applicationpool  => 'DefaultAppPool',
-     pysicalpath      => 'C:\inetpub\wwwroot',
+     physicalpath      => 'C:\inetpub\wwwroot',
      notify   =>  Windowsfeature['Web-WebServer'],
      }
    
