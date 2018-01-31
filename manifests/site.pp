@@ -53,7 +53,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
    
    dsc_xaddomain {'xADDomain':
-   dsc_domainname                    => 'mydomain.local',
+   dsc_domainname => 'mydomain.local',
    dsc_safemodeadministratorpassword => {
     'user' => 'administrator',
     'password' => 'Supersecret#123',
@@ -61,7 +61,8 @@ node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
     dsc_domainadministratorcredential => {
      'user' => 'administrator',
      'password' => 'Supersecret#123',  
-   },
+     },
+   }
   
    reboot {'dsc_reboot':
      message => 'DSC has requested a reboot',
