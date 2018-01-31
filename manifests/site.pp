@@ -56,8 +56,8 @@ node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
    dsc_domainname                    => 'mydomain.local',
    dsc_safemodeadministratorpassword => {
     'user' => 'administrator',
-    'password' => Sensitive('Supersecret#123')
-    }
+    'password' => 'Supersecret#123',
+    },
    }
   
    reboot {'dsc_reboot':
