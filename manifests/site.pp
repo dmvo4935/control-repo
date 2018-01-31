@@ -52,7 +52,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 
 node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
    
-   dsc_xActiveDirectory {'xADDomain':
+   dsc_xaddomain {'xADDomain':
    dsc_DomainName                    => 'mydomain.local',
    dsc_SafemodeAdministratorPassword => 'Supersecret#123',
    }
