@@ -58,7 +58,10 @@ node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
     'user' => 'administrator',
     'password' => 'Supersecret#123',
     },
-   }
+    dsc_domainadministratorcredential => {
+     'user' => 'administrator',
+     'password' => 'Supersecret#123',  
+   },
   
    reboot {'dsc_reboot':
      message => 'DSC has requested a reboot',
