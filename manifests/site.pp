@@ -81,3 +81,34 @@ node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
      when    => 'pending',
      }
 }
+
+node 'ec2amaz-p5g3loa.eu-central-1.compute.internal' {
+  windowsfeature { 'AD-Domain-Services':
+   ensure             => present,
+   installsubfeatures => true,
+   notify             => Dsc_xaddomaincontroller['xADDomainController'],
+   }
+   
+   #exec {'importing ADDSDeployment':
+   #command  => 'Import-module ADDSDeployment',
+   #provider => powershell,
+   #notify   => Dsc_xaddomain['xADDomain'],
+   #}
+   
+   dsc_xaddomaincontroller {'xADDomainController':
+   dsc_domainname => 'mydomain.local',
+   dsc_safemodeadministratorpassword => {
+    'user' => 'administrator',
+    'password' => 'Supersecret#123',
+    },
+    dsc_domainadministratorcredential => {
+     'user' => 'administrator',
+     'password' => 'Supersecret#123',  
+     },
+   }
+  
+   reboot {'dsc_reboot':
+     message => 'DSC has requested a reboot',
+     when    => 'pending',
+     }
+}
