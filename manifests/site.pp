@@ -89,11 +89,11 @@ node 'ec2amaz-p5g3loa.eu-central-1.compute.internal' {
    notify             => Dsc_xaddomaincontroller['xADDomainController'],
    }
    
-   #exec {'importing ADDSDeployment':
+   exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")': 
    #command  => 'Import-module ADDSDeployment',
-   #provider => powershell,
-   #notify   => Dsc_xaddomain['xADDomain'],
-   #}
+   provider  => powershell,
+   notify    => Dsc_xaddomaincontroller['xADDomainController'],
+   }
    
    dsc_xaddomaincontroller {'xADDomainController':
    dsc_domainname => 'mydomain.local',
