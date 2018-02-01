@@ -87,7 +87,12 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 node 'ec2amaz-p5g3loa.mydomain.local' {
   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools']
   
-  windowsfeature { $adfeatures:
+  windowsfeature {'RSAT-AD-Tools':
+   ensure             => present,
+   installsubfeatures => true,
+   }
+  
+  windowsfeature {'AD-Domain-Services':
    ensure             => present,
    installsubfeatures => true,
    notify             => Exec['Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")'],
