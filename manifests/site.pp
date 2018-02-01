@@ -52,7 +52,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 
 node 'ec2amaz-05d23ld.mydomain.local' {
    
-   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools',]
+   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools']
    
    windowsfeature { $adfeatures:
    ensure             => present,
@@ -85,12 +85,12 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 }
 
 node 'ec2amaz-p5g3loa.mydomain.local' {
-  $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools',]
+  $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools']
   
   windowsfeature { $adfeatures:
    ensure             => present,
    installsubfeatures => true,
-   notify             => Dsc_xaddomaincontroller['xADDomainController'],
+   notify             => Exec['Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")'],
    }
    
    exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")': 
