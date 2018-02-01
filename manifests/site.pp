@@ -102,7 +102,7 @@ node 'ec2amaz-p5g3loa.eu-central-1.compute.internal' {
     'password' => 'Supersecret#123',
     },
     dsc_domainadministratorcredential => {
-     'user' => 'administrator',
+     'user' => 'mydomain.local\administrator',
      'password' => 'Supersecret#123',  
      },
    }
