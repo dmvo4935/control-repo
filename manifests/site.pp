@@ -52,6 +52,12 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 
 node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
    
+   exec {'importing ADDSDeployment':
+   command  => 'Import-module ADDSDeployment',
+   provider => powershell,
+   notify   => Dsc_xaddomain['xADDomain'],
+   }
+   
    dsc_xaddomain {'xADDomain':
    dsc_domainname => 'mydomain.local',
    dsc_safemodeadministratorpassword => {
