@@ -87,7 +87,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 node 'ec2amaz-p5g3loa.mydomain.local' {
   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools']
   
-  windowsfeature {'RSAT-AD-Tools':
+  windowsfeature {'RSAT-ADDS':
    ensure             => present,
    installsubfeatures => true,
    }
