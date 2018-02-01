@@ -52,7 +52,9 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 
 node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
    
-   windowsfeature { 'AD-Domain-Services':
+   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools',]
+   
+   windowsfeature { $adfeatures:
    ensure             => present,
    installsubfeatures => true,
    notify             => Exec['importing ADDSDeployment'],
@@ -83,7 +85,9 @@ node 'ec2amaz-05d23ld.eu-central-1.compute.internal' {
 }
 
 node 'ec2amaz-p5g3loa.eu-central-1.compute.internal' {
-  windowsfeature { 'AD-Domain-Services':
+  $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools',]
+  
+  windowsfeature { $adfeatures:
    ensure             => present,
    installsubfeatures => true,
    notify             => Dsc_xaddomaincontroller['xADDomainController'],
