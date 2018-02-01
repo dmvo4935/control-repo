@@ -52,18 +52,12 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
 
 node 'ec2amaz-05d23ld.mydomain.local' {
    
-   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools']
+   $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools', 'RSAT-ADDS']
    
    windowsfeature { $adfeatures:
    ensure             => present,
    installsubfeatures => true,
-   notify             => Exec['importing ADDSDeployment'],
-   }
-   
-   exec {'importing ADDSDeployment':
-   command  => 'Import-module ADDSDeployment',
-   provider => powershell,
-   notify   => Dsc_xaddomain['xADDomain'],
+   notify             => Dsc_xaddomain['xADDomain'],
    }
    
    dsc_xaddomain {'xADDomain':
