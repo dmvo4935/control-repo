@@ -21,6 +21,7 @@ mod "puppet/windows_firewall",              '1.1.0'
 mod 'liamjbennett-win_facts',               '0.0.2'
 mod "puppet/dotnet",                        '1.1.0'
 mod "kreeuwijk/vmtools_win",                '1.0.4'
+mod "trlinkin/domain_membership"            '1.1.2'
 
 # Modules from Gitlab (needs to have your control-repo at minimum)
 mod 'control-repo',

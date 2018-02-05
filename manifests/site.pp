@@ -115,3 +115,11 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
      when    => 'pending',
      }
 }
+
+node 'ec2amaz-9u9kpm0.eu-central-1.compute.internal' {
+  class { 'role::sql_server':}
+}
+
+node 'ec2amaz-bdfe0vk.eu-central-1.compute.internal' {
+  class { 'role::sql_server': }
+}
