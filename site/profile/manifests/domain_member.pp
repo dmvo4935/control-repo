@@ -8,6 +8,7 @@ class { 'domain_membership':
   domain       => 'mydomain.local',
   username     => 'Administrator',
   password     => 'Supersecret#123',
+  join_options => '3',
 }
 
 }
