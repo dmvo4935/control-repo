@@ -77,7 +77,9 @@ node 'ec2amaz-05d23ld.mydomain.local' {
      when    => 'pending',
      }
 
-    class { 'profile::mount_iso': } 
+    class { 'profile::mount_iso': } ->
+   
+    class { 'profile::create_share': }
 
 }
 
