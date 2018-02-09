@@ -76,6 +76,9 @@ node 'ec2amaz-05d23ld.mydomain.local' {
      message => 'DSC has requested a reboot',
      when    => 'pending',
      }
+
+    class { 'profile::mount_iso': } 
+
 }
 
 node 'ec2amaz-p5g3loa.mydomain.local' {
@@ -116,10 +119,10 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
      }
 }
 
-node 'ec2amaz-9u9kpm0.eu-central-1.compute.internal' {
+node 'ec2amaz-9u9kpm0.mydomain.local' {
   class { 'role::sql_server':}
 }
 
-node 'ec2amaz-bdfe0vk.eu-central-1.compute.internal' {
+node 'ec2amaz-bdfe0vk.mydomain.local' {
   class { 'role::sql_server': }
 }
