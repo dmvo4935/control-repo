@@ -22,7 +22,7 @@ mod 'liamjbennett-win_facts',               '0.0.2'
 mod "puppet/dotnet",                        '1.1.0'
 mod "kreeuwijk/vmtools_win",                '1.0.4'
 mod "trlinkin/domain_membership",           '1.1.2'
-mod "puppetlabs/sqlserver",		    '2.1.0'
+#mod "puppetlabs/sqlserver",		    '2.1.0'
 mod 'puppetlabs-mount_iso',                 '2.0.0'
 
 # Modules from Gitlab (needs to have your control-repo at minimum)
