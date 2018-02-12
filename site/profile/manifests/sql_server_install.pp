@@ -29,15 +29,13 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 
 
  dsc_xsqlserverinstall {'Install SQL Server': 
-#   dsc_action       =>  'Install',
    dsc_instancename =>  'MSSQLSERVER',
    dsc_features     =>  'SQLENGINE,AS',
    dsc_sourcepath   => $sql_source,
-   dsc_sourcecredential => {
+   dsc_sourcepathcredential => {
     'user'      =>  'mydomain\administrator',
-    'password'  =>  'Supersecret#123',
+    'password'  =>  'Supersecret#123'
     },
-#   dsc_forcereboot  => 'false',
    dsc_installshareddir     => 'C:\Program Files\Microsoft SQL Server',
    dsc_installsharedwowdir  => 'C:\Program Files (x86)\Microsoft SQL Server',
    dsc_instancedir          => 'C:\Program Files\Microsoft SQL Server',
@@ -53,11 +51,15 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
    dsc_asbackupdir          => 'C:\MSOLAP\Backup',
    dsc_astempdir            => 'C:\MSOLAP\Temp',
    dsc_sqlcollation         => 'SQL_Latin1_General_CP1_CI_AS',
-   dsc_sqlsvcaccount        => {
+   dsc_sqladministratorcredential        => {
      'user'      => 'mydomain\administrator',
-     'password'  => 'Supersecret#123',
+     'password'  => 'Supersecret#123'
     },
-   dsc_agtsvcaccount        => {
+   dsc_svcaccount        => {
+     'user'      => 'mydomain\administrator',
+     'password'  => 'Supersecret#123'
+    },
+   dsc_agentsvcaccount        => {
      'user'      => 'mydomain\administrator',
      'password'  => 'Supersecret#123',
     }, 
@@ -65,7 +67,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
      'user'      => 'mydomain\administrator',
      'password'  => 'Supersecret#123',
     }, 
-   dsc_sqlsysadminaccounts => 'mydomain\administrator',
+   dsc_sysadminaccounts => 'mydomain\administrator',
    dsc_assysadminaccounts  => 'mydomain\administrator',
    }
 

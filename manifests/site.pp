@@ -132,6 +132,7 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
 }
 
 node 'ec2amaz-9u9kpm0.mydomain.local' {
+  
   class { 'role::sql_server':}
 }
 
