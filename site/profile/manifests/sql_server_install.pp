@@ -27,7 +27,7 @@ exec {'Install SqlserverDsc module':
     } ->
 
 
-dsc_SqlSetup {'SqlSetup':
+dsc_sqlsetup {'SqlServerDsc':
    dsc_action       =>  'Install',
    dsc_instancename =>  'MSSQLSERVER',
    dsc_features     =>  'SQLENGINE,AS',
