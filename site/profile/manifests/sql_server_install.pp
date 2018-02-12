@@ -43,6 +43,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
   # dsc_installshareddir     => 'C:\Program Files\Microsoft SQL Server',
   # dsc_installsharedwowdir  => 'C:\Program Files (x86)\Microsoft SQL Server',
   # dsc_instancedir          => 'C:\Program Files\Microsoft SQL Server',
+   dsc_versionid	    => '130',
    dsc_installsqldatadir    => 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
    dsc_sqluserdbdir         => 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
    dsc_sqluserdblogdir      => 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
