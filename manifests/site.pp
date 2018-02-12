@@ -137,7 +137,7 @@ node 'ec2amaz-9u9kpm0.mydomain.local' {
 
 node 'ec2amaz-bdfe0vk.mydomain.local' {
 
-  dsc_xcluster {'test_cluster': }
+  dsc_sqlsetup {'test_cluster': }
 
   class { 'role::sql_server': }
 }
