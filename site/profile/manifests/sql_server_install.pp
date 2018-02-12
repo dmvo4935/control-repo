@@ -68,6 +68,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
    # }, 
    dsc_sysadminaccounts => 'mydomain\\administrator',
    #dsc_assysadminaccounts  => 'mydomain\administrator',
+   dsc_psdscrunascredential => { 'user' => 'mydomain\\administrator', 'password' => 'Supersecret#123' },
    }
 
 }
