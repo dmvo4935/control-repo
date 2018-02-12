@@ -22,7 +22,7 @@ exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force':
 exec {'Install SqlserverDsc module':
      command  => 'Find-Module -Name SqlServerDsc -Repository PSGallery | Install-Module',
      provider => powershell, 
-    } ->
+    } 
 
 
 #dsc_sqlsetup {'SqlSetup':
