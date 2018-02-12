@@ -15,6 +15,7 @@ $sql_source = '\\10.0.10.7\H$'
 #    'INSTALLSHAREDWOWDIR' => 'C:\\Program Files (x86)\\Microsoft SQL Server',
 #  }
 
+exec {'Find-Module -Name SqlServerDsc -Repository PSGallery | Install-Module':  provider => poweshell} ->
 
 
 dsc_sqlsetup {'SqlSetup':
