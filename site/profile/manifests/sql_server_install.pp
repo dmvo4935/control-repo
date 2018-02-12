@@ -15,6 +15,12 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 #    'INSTALLSHAREDWOWDIR' => 'C:\\Program Files (x86)\\Microsoft SQL Server',
 #  }
 
+dsc_file {'test file':
+    dsc_ensure          => 'present',
+    dsc_type            => 'File',
+    dsc_destinationpath => '${sql_sorce}\testfile',
+  } 
+
 exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force': 
      provider => powershell, 
     } -> 
