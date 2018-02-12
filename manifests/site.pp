@@ -84,7 +84,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
    tag       => 'primary_dc',
             }
 
-   notify {'Set-DnsClientServerAddress * -ServerAddresses ("$::ipaddress")': }   
+   notify {$::ipaddress : }   
 
     class { 'profile::mount_iso': } ->
    
