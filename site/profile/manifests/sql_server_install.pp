@@ -37,7 +37,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
    dsc_features     =>  'SQLENGINE,AS',
    dsc_sourcepath   => "\\\\10.0.10.7\\SQLInstallation",
    dsc_sourcepathcredential => {
-    'user'      =>  'mydomain\administrator',
+    'user'      =>  'mydomain.local\administrator',
     'password'  =>  'Supersecret#123'
     },
   # dsc_installshareddir     => 'C:\Program Files\Microsoft SQL Server',
@@ -57,18 +57,18 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
   # dsc_astempdir            => 'C:\MSOLAP\Temp',
    dsc_sqlcollation         => 'SQL_Latin1_General_CP1_CI_AS',
    dsc_sqladministratorcredential        => {
-     'user'      => 'mydomain\\administrator',
+     'user'      => 'mydomain.local\\administrator',
      'password'  => 'Supersecret#123'
     },
-   dsc_svcaccount        => 'mydomain\\administrator',
-   dsc_agentsvcaccount        => 'mydomain\\administrator',
+   dsc_svcaccount        => 'mydomain.local\\administrator',
+   dsc_agentsvcaccount        => 'mydomain.local\\administrator',
    #dsc_assvcaccount        => {
    #  'user'      => 'mydomain\administrator',
    #  'password'  => 'Supersecret#123',
    # }, 
-   dsc_sysadminaccounts => 'mydomain\\administrator',
+   dsc_sysadminaccounts => 'mydomain.local\\administrator',
    #dsc_assysadminaccounts  => 'mydomain\administrator',
-   dsc_psdscrunascredential => { 'user' => 'mydomain\\administrator', 'password' => 'Supersecret#123' },
+   dsc_psdscrunascredential => { 'user' => 'mydomain.local\\administrator', 'password' => 'Supersecret#123' },
    }
 
 }
