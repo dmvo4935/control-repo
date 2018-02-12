@@ -81,8 +81,10 @@ node 'ec2amaz-05d23ld.mydomain.local' {
    #command  => 'Import-module ADDSDeployment',
    command   => 'Set-DnsClientServerAddress * -ServerAddresses ("$::ipaddress")',
    provider  => powershell,
-   tag       => 'primary_dc'
+   tag       => 'primary_dc',
             }
+
+   notify {'Set-DnsClientServerAddress * -ServerAddresses ("$::ipaddress")': }   
 
     class { 'profile::mount_iso': } ->
    
