@@ -1,6 +1,6 @@
 class profile::sql_server_install {
 
-$sql_source = '\\10.0.10.7\H$'
+$sql_source = '\\10.0.10.7\SQLInstallation'
 
 #sqlserver_instance{ 'MSSQLSERVER':
 #  source                  => $sql_source,
@@ -15,7 +15,9 @@ $sql_source = '\\10.0.10.7\H$'
 #    'INSTALLSHAREDWOWDIR' => 'C:\\Program Files (x86)\\Microsoft SQL Server',
 #  }
 
-exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force': provider => powershell, } -> 
+exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force': 
+     provider => powershell, 
+    } -> 
 
 exec {'Install SqlserverDsc module':
      command  => 'Find-Module -Name SqlServerDsc -Repository PSGallery | Install-Module',
@@ -65,5 +67,3 @@ exec {'Install SqlserverDsc module':
 #   }
 
 }
-
-
