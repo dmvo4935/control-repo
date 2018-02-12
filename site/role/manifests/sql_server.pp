@@ -5,5 +5,5 @@ class role::sql_server {
 #  include profile::base
 
    include profile::domain_member
-
+   include profile::sql_server_install
 }
