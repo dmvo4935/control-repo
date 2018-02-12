@@ -32,6 +32,8 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
   dsc_name   => 'Net-Framework-Core',
 } -> 
 
+ user {'NT AUTHORITY\SQLSVC': } ->
+
  dsc_xsqlserverinstall {'Install SQL Server': 
    dsc_instancename =>  'MSSQLSERVER',
    dsc_features     =>  'SQLENGINE,AS',
@@ -60,8 +62,8 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
      'user'      => 'mydomain.local\\administrator',
      'password'  => 'Supersecret#123'
     },
-   #dsc_svcaccount        => 'mydomain.local\\administrator',
-   #dsc_agentsvcaccount        => 'mydomain.local\\administrator',
+   dsc_svcaccount        => 'NT AUTHORITY\SQLSVC',
+   dsc_agentsvcaccount        => 'NT AUTHORITY\SQLSVC',
    #dsc_assvcaccount        => {
    #  'user'      => 'mydomain\administrator',
    #  'password'  => 'Supersecret#123',
