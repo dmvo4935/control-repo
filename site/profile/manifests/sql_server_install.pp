@@ -1,6 +1,6 @@
 class profile::sql_server_install {
 
-$sql_source = '\\10.0.10.7\SQLInstallation\'
+$sql_source = '\\10.0.10.7\SQLInstallation'
 
 #sqlserver_instance{ 'MSSQLSERVER':
 #  source                  => $sql_source,
@@ -31,7 +31,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation\'
  dsc_xsqlserverinstall {'Install SQL Server': 
    dsc_instancename =>  'MSSQLSERVER',
    dsc_features     =>  'SQLENGINE,AS',
-   dsc_sourcepath   => '\\10.0.10.7\SQLInstallation\',
+   dsc_sourcepath   => "\\\\10.0.10.7\\SQLInstallation",
    dsc_sourcepathcredential => {
     'user'      =>  'mydomain\administrator',
     'password'  =>  'Supersecret#123'
