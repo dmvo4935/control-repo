@@ -77,6 +77,13 @@ node 'ec2amaz-05d23ld.mydomain.local' {
      when    => 'pending',
      }
 
+   @@exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")':
+   #command  => 'Import-module ADDSDeployment',
+   provider  => powershell,
+   notify    => Dsc_xaddomaincontroller['xADDomainController'],
+   tag       => 'primary_dc'
+            }
+
     class { 'profile::mount_iso': } ->
    
     class { 'profile::create_share': }

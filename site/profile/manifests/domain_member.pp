@@ -1,8 +1,10 @@
 class profile::domain_member {
 
-exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")':
-   provider  => powershell,
-   } ->
+#exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")':
+#   provider  => powershell,
+#   } ->
+
+Exec <<| tag == 'primary_dc' |>> ->
 
 class { 'domain_membership':
   domain       => 'mydomain.local',
