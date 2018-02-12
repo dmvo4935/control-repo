@@ -77,8 +77,9 @@ node 'ec2amaz-05d23ld.mydomain.local' {
      when    => 'pending',
      }
 
-   @@exec {'Set-DnsClientServerAddress * -ServerAddresses ("${::ipaddress}")':
+   @@exec {'Configuring Dns Client':
    #command  => 'Import-module ADDSDeployment',
+   command   => 'Set-DnsClientServerAddress * -ServerAddresses ("$::ipaddress")',
    provider  => powershell,
    tag       => 'primary_dc'
             }
