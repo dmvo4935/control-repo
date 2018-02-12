@@ -60,8 +60,8 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
      'user'      => 'mydomain.local\\administrator',
      'password'  => 'Supersecret#123'
     },
-   dsc_svcaccount        => 'mydomain.local\\administrator',
-   dsc_agentsvcaccount        => 'mydomain.local\\administrator',
+   #dsc_svcaccount        => 'mydomain.local\\administrator',
+   #dsc_agentsvcaccount        => 'mydomain.local\\administrator',
    #dsc_assvcaccount        => {
    #  'user'      => 'mydomain\administrator',
    #  'password'  => 'Supersecret#123',
