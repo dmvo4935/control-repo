@@ -19,6 +19,8 @@ exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force':
      provider => powershell, 
     } -> 
 
+exec {"Set-PSRepository -Name \"PSGallery\" -InstallationPolicy Trusted -SourceLocation 'https://www.powershellgallery.com/api/v2/'": provider => powershell, } ->
+
 exec {'Install SqlserverDsc module':
      command  => 'Find-Module -Name SqlServerDsc -Repository PSGallery | Install-Module',
      provider => powershell, 
