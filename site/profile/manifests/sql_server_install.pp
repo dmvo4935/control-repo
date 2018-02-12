@@ -33,7 +33,7 @@ dsc_file {'test file':
 #    } ->
 
 
-#dsc_sqlsetup {'SqlServerDsc':
+dsc_sqlsetup {'SqlServerDsc': }
 #   dsc_action       =>  'Install',
 #   dsc_instancename =>  'MSSQLSERVER',
 #   dsc_features     =>  'SQLENGINE,AS',
