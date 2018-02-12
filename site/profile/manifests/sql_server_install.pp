@@ -32,7 +32,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
   dsc_name   => 'Net-Framework-Core',
 } -> 
 
- user {'NT AUTHORITY\SQLSVC': } ->
+ user {'NT AUTHORITY\SQLSVC': ensure => 'present', } ->
 
  dsc_xsqlserverinstall {'Install SQL Server': 
    dsc_instancename =>  'MSSQLSERVER',
