@@ -103,16 +103,17 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
   windowsfeature {'AD-Domain-Services':
    ensure             => present,
    installsubfeatures => true,
-   notify             => Exec['Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")'],
-   }
+  # notify             => Exec['Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")'],
+   } ->
    
-   exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")': 
-   #command  => 'Import-module ADDSDeployment',
-   provider  => powershell,
-   notify    => Dsc_xaddomaincontroller['xADDomainController'],
-   }
+  # exec {'Set-DnsClientServerAddress * -ServerAddresses ("10.0.10.7")': 
+ #  provider  => powershell,
+ #  notify    => Dsc_xaddomaincontroller['xADDomainController'],
+ #  } 
    
-   dsc_xaddomaincontroller {'xADDomainController':
+  Exec <<| tag == 'primary_dc' |>> ->  
+  
+  dsc_xaddomaincontroller {'xADDomainController':
    dsc_domainname => 'mydomain.local',
    dsc_safemodeadministratorpassword => {
     'user' => 'administrator',
