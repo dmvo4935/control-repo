@@ -18,7 +18,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 dsc_file {'test file':
     dsc_ensure          => 'present',
     dsc_type            => 'File',
-    dsc_destinationpath => '${sql_sorce}\testfile',
+    dsc_destinationpath => '${sql_source}\testfile',
   } 
 
 #exec {'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force': 
