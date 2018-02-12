@@ -27,6 +27,10 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 #     provider => powershell, 
 #    } ->
 
+ dsc_windowsfeature {'.NET35':
+  dsc_ensure => 'present',
+  dsc_name   => 'Net-Framework-Core',
+} -> 
 
  dsc_xsqlserverinstall {'Install SQL Server': 
    dsc_instancename =>  'MSSQLSERVER',
