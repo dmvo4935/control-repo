@@ -28,7 +28,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 #    } ->
 
 
-dsc_sqlsetup {'SqlServerDsc': }
+#dsc_sqlsetup {'SqlServerDsc': }
 #   dsc_action       =>  'Install',
 #   dsc_instancename =>  'MSSQLSERVER',
 #   dsc_features     =>  'SQLENGINE,AS',
