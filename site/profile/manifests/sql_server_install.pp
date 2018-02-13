@@ -71,7 +71,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
    dsc_sysadminaccounts       => 'mydomain.local\\administrator',
    #dsc_assysadminaccounts  => 'mydomain\administrator',
    dsc_psdscrunascredential   => { 'user' => 'mydomain.local\\administrator', 'password' => 'Supersecret#123' },
-   ensure                     => 'absent'
+   ensure                     => 'present'
    }
   
   reboot {'dsc_reboot':
