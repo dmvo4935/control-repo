@@ -9,7 +9,7 @@ $sql_source = '\\\\10.0.10.7\\SQLInstallation'
 
  #user {'NT AUTHORITY\SQLSVC': ensure => 'present', } ->
 
- dsc_xsqlservesetup {'Install SQL Server': 
+ dsc_xsqlserversetup {'Install SQL Server': 
   
 dsc_action              => 'Install',
 dsc_installsqldatadir	=> 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
@@ -24,7 +24,7 @@ dsc_sqluserdbdir	=> 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\M
 dsc_agtsvcaccount	=> {
     'user'      =>  'mydomain.local\\administrator',
     'password'  =>  'Supersecret#123'
-    }
+    },
 dsc_installshareddir	=> 'C:\Program Files (x86)\Microsoft SQL Server',
 dsc_sqltempdbdir	=> 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
 dsc_instancename        => 'MSSQLSERVER',
