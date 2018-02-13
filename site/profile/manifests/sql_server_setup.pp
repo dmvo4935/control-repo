@@ -48,7 +48,7 @@ dsc_sourcepath	         => $sql_source,
 #  dsc_psdscrunascredential	PsDscRunAsCredential
   dsc_instancename     => 'MSSQLSERVER',
   dsc_protocolname     => 'tcp',
-  dsc_isenabled	       => 'enabled',
+  dsc_isenabled	       => 'True',
   dsc_tcpdynamicports  => '',
   dsc_tcpport          => '1433',
   dsc_restartservice   => 'True',
