@@ -7,8 +7,6 @@ $sql_source = '\\\\10.0.10.7\\SQLInstallation'
   dsc_name   => 'Net-Framework-Core',
 } -> 
 
- #user {'NT AUTHORITY\SQLSVC': ensure => 'present', } ->
-
  dsc_xsqlserversetup {'Install SQL Server': 
   
 dsc_action              => 'Install',
@@ -43,6 +41,17 @@ dsc_sqlsvcaccount	=> {
 dsc_features             => 'SQLENGINE',
 dsc_sourcepath	         => $sql_source,
 
+} -> 
+
+  dsc_xsqlservernetwork {'Enable networking':
+  ensure               => 'present',	
+#  dsc_psdscrunascredential	PsDscRunAsCredential
+  dsc_instancename     => 'MSSQLSERVER',
+  dsc_protocolname     => 'tcp',
+  dsc_isenabled	       => 'enabled',
+  dsc_tcpdynamicports  => '',
+  dsc_tcpport          => '1433',
+  dsc_restartservice   => 'True',
 }
   
   reboot {'dsc_reboot':
