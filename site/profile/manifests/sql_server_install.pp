@@ -62,15 +62,15 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
      'user'      => 'mydomain.local\\administrator',
      'password'  => 'Supersecret#123'
     },
-   dsc_svcaccount        => 'NT Service\\SQLSVC',
-   dsc_agentsvcaccount        => 'NT Service\\SQLAgtSVC',
+   dsc_svcaccount             => 'NT Service\MSSQLSERVER',
+   dsc_agentsvcaccount        => 'NT Service\SQLSERVERAGENT',
    #dsc_assvcaccount        => {
    #  'user'      => 'mydomain\administrator',
    #  'password'  => 'Supersecret#123',
    # }, 
-   dsc_sysadminaccounts => 'mydomain.local\\administrator',
+   dsc_sysadminaccounts       => 'mydomain.local\administrator',
    #dsc_assysadminaccounts  => 'mydomain\administrator',
-   dsc_psdscrunascredential => { 'user' => 'mydomain.local\\administrator', 'password' => 'Supersecret#123' },
+   dsc_psdscrunascredential   => { 'user' => 'mydomain.local\\administrator', 'password' => 'Supersecret#123' },
    }
 
 }
