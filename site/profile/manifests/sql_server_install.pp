@@ -36,7 +36,7 @@ $sql_source = '\\10.0.10.7\SQLInstallation'
 
  dsc_xsqlserverinstall {'Install SQL Server': 
    dsc_instancename =>  'MSSQLSERVER',
-   dsc_features     =>  'SQLENGINE',
+   dsc_features     =>  'SQLENGINE,SSMS',
    dsc_sourcepath   => "\\\\10.0.10.7\\SQLInstallation",
    dsc_sourcepathcredential => {
     'user'      =>  'mydomain.local\administrator',
