@@ -52,6 +52,18 @@ dsc_sourcepath	         => $sql_source,
 #  dsc_tcpdynamicports  => '',
   dsc_tcpport          => '1433',
   dsc_restartservice   => 'True',
-  }
+  } -> 
+
+  dsc_xsqlserverfirewall {'Enable Firewall':
+      dsc_instancename    => 'MSSQLSERVER',
+      dsc_features        => 'SQLENGINE',
+      dsc_ensure          => 'present',
+      dsc_sourcepath      => $sql_source,
+      dsc_sourcecredential  => {
+                'user'      =>  'mydomain.local\\administrator',
+                'password'  =>  'Supersecret#123'
+                     },  
+     dsc_databaseenginefirewall => 'true',
+      }
   
 }
