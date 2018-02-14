@@ -5,7 +5,7 @@ $clustering_features = ['Failover-Clustering', 'RSAT-Clustering']
 windowsfeature { $clustering_features:
   ensure => 'present',
   installsubfeatures => true,
-  }
+  } ->
 
   dsc_xcluster { 'DefaultCluster': 
   dsc_domainadministratorcredential  => {
