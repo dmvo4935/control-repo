@@ -88,20 +88,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 
     class { 'profile::mount_iso': } ->
   
-    class { 'profile::create_share': 
-          share_name => 'SQLInstallation',
-          path       => 'H:\\', 
-         }
-
-    file { 'Cluster Witness':
-      path    => 'C:\\Witness',
-      ensure  => 'directory',
-    } -> 
-    
-    class { 'profile::create_share': 
-          share_name => 'Witness',
-          path       => 'C:\\Witness',
-         }
+    class { 'profile::create_share': }
 
 }
 
