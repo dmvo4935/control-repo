@@ -16,4 +16,9 @@ windowsfeature { $clustering_features:
     dsc_name   => 'defaultcluster',
     dsc_staticipaddress => '10.0.10.63',
     }
+
+ reboot {'dsc_reboot':
+     message => 'DSC has requested a reboot',
+     when    => 'pending',
+     }
 }
