@@ -1,6 +1,6 @@
-class profile::create_share {
+class profile::create_share ($share_name, $path){
 
-exec {'New-SMBShare –Name “SQLinstallation” –Path “H:\” –FullAccess mydomain\administrator':
+exec {'New-SMBShare –Name “$share_name” –Path “$path” –FullAccess mydomain\administrator':
    provider  => powershell,
    } 
     
