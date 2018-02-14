@@ -1,6 +1,8 @@
 class profile::cluster_node {
 
-windowsfeature { 'RSAT-Clustering':
+$clustering_features = ['Failover-Clustering', 'RSAT-Clustering']
+
+windowsfeature { $clustering_features:
   ensure => 'present',
   installsubfeatures => true,
   }
