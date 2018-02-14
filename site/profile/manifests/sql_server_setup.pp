@@ -52,10 +52,6 @@ dsc_sourcepath	         => $sql_source,
 #  dsc_tcpdynamicports  => '',
   dsc_tcpport          => '1433',
   dsc_restartservice   => 'True',
-}
+  }
   
-  reboot {'dsc_reboot':
-     message => 'DSC has requested a reboot',
-     when    => 'pending',
-     }
 }
