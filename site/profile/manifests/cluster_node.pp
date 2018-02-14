@@ -14,7 +14,7 @@ windowsfeature { $clustering_features:
   },
 #dsc_psdscrunascredential	PsDscRunAsCredential
     dsc_name   => 'defaultcluster',
-    dsc_staticipaddress => '10.0.10.63/26',
+    dsc_staticipaddress => '10.0.10.62/26',
     }
 
    Dsc_xclusterquorum <<||>>
