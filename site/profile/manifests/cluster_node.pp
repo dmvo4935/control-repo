@@ -17,5 +17,15 @@ windowsfeature { $clustering_features:
     dsc_staticipaddress => '10.0.10.62/26',
     }
 
-   Dsc_xclusterquorum <<||>>
+  # Dsc_xclusterquorum <<||>>
+   dsc_xclusterquorum {'Connect witness': 
+        dsc_resource    => "\\10.0.10.7\witness",
+        dsc_psdscrunascredential  => {
+           'name'     => 'mydomain.local\administrator',
+           'password' => 'Supersecret#123'
+        },
+        dsc_issingleinstance  => 'Yes',
+        dsc_type              => 'NodeAndFileShareMajority',
+   }
+
 }
