@@ -63,6 +63,10 @@ dsc_sourcepath	         => $sql_source,
                 'user'      =>  'mydomain.local\\administrator',
                 'password'  =>  'Supersecret#123'
                      },  
+     dsc_psdscrunascredential => => {
+                'user'      =>  'mydomain.local\\administrator',
+                'password'  =>  'Supersecret#123'
+                     },
      dsc_databaseenginefirewall => 'true',
       }
   
