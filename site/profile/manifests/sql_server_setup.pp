@@ -23,7 +23,7 @@ dsc_agtsvcaccount	=> {
     'user'      =>  'mydomain.local\\administrator',
     'password'  =>  'Supersecret#123'
     },
-dsc_installshareddir	=> 'C:\Program Files (x86)\Microsoft SQL Server',
+dsc_installshareddir	=> 'C:\Program Files\Microsoft SQL Server',
 dsc_sqltempdbdir	=> 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Data',
 dsc_instancename        => 'MSSQLSERVER',
 dsc_setupcredential     =>  {
