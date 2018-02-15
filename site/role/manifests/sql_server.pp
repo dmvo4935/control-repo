@@ -7,7 +7,7 @@ class role::sql_server {
    include profile::domain_member
    #include profile::sql_server_install
    include profile::sql_server_setup
-   include profile::cluster_node
+#   include profile::cluster_node
  
      reboot {'dsc_reboot':
      message => 'DSC has requested a reboot',

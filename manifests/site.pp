@@ -146,9 +146,13 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
 node 'ec2amaz-9u9kpm0.mydomain.local' {
   
   class { 'role::sql_server':}
+
+  include profile::cluster_node_secondary
 }
 
 node 'ec2amaz-bdfe0vk.mydomain.local' {
 
   class { 'role::sql_server': }
+  
+  include profile::cluster_node
 }
