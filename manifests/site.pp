@@ -91,7 +91,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
     class { 'profile::create_share': }
 
     @@dsc_xclusterquorum {'Connect witness': 
-        dsc_resource    => '\\\\$::ipaddress\Witness',
+        dsc_resource    => "\\\\${::ipaddress}\\Witness",
         #dsc_psdscrunascredential        PsDscRunAsCredential
         dsc_issingleinstance  => 'Yes',
         dsc_type              => 'NodeAndFileShareMajority',
