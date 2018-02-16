@@ -10,7 +10,7 @@ windowsfeature { $clustering_features:
   dsc_xwaitforcluster {'WaitForCluster': 
      dsc_retryintervalsec	=> '15',
      dsc_psdscrunascredential	=> {
-          'user'       => 'mydomain\administrator',
+          'user'       => 'mydomain\\administrator',
           'password'   => 'Supersecret#123'
            },           
      dsc_name	       => 'defaultcluster',
@@ -20,7 +20,7 @@ windowsfeature { $clustering_features:
   
   dsc_xcluster { 'DefaultCluster': 
   dsc_domainadministratorcredential  => {
-    'user'     => 'mydomain.local\\administrator',
+    'user'     => 'mydomain\\administrator',
     'password' => 'Supersecret#123'
   },
 #dsc_psdscrunascredential	PsDscRunAsCredential
