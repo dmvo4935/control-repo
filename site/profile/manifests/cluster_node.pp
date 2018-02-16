@@ -19,7 +19,7 @@ windowsfeature { $clustering_features:
 
   # Dsc_xclusterquorum <<||>>
    dsc_xclusterquorum {'Connect witness': 
-        dsc_resource    => "\\10.0.10.7\witness",
+        dsc_resource    => "\\\\10.0.10.7\\witness",
         dsc_psdscrunascredential  => {
            'user'     => 'mydomain.local\administrator',
            'password' => 'Supersecret#123'
