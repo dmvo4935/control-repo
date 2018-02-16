@@ -95,7 +95,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 #    @@dsc_xclusterquorum {'Connect witness': 
 #        dsc_resource    => "\\10.0.10.7\witness",
 #        dsc_psdscrunascredential  => {
-#           'name'     => 'mydomain.local\administrator',
+#           'user'     => 'mydomain.local\administrator',
 #           'password' => 'Supersecret#123'
 #        },
 #        dsc_issingleinstance  => 'Yes',
