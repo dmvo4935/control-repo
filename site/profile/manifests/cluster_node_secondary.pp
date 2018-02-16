@@ -23,7 +23,10 @@ windowsfeature { $clustering_features:
     'user'     => 'mydomain\\administrator',
     'password' => 'Supersecret#123'
   },
-#dsc_psdscrunascredential	PsDscRunAsCredential
+  dsc_psdscrunascredential           => {
+    'user'     => 'mydomain\\administrator',
+    'password' => 'Supersecret#123'
+  },
     dsc_name   => 'defaultcluster',
     dsc_staticipaddress => '10.0.10.62/26',
     }
