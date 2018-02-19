@@ -27,7 +27,7 @@ notify {'testing regexstr function':
 path                   => 'C:\\windows\\system32\\drivers\\etc\\hosts',
 ensure                 => 'present',
 #match                  => '^10\.0\.10\.52.*$',
-match                  => inline_template(<%= str_addr.gsub(/\\/,"") %>),
+match                  => inline_template('<%= str_addr.gsub(/\\/,"") %>'),
 multiple               => 'false',
 replace                => 'false',
 append_on_no_match     => 'true',
