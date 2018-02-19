@@ -7,6 +7,8 @@ windowsfeature { $clustering_features:
   installsubfeatures => true,
   } ->
 
+exec {'Reset Client DNS Cache': command => 'Clear-DnsClientCache', provider => powershell } ->
+
   dsc_xwaitforcluster {'WaitForCluster': 
      dsc_retryintervalsec	=> '15',
      dsc_psdscrunascredential	=> {
