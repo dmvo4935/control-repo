@@ -19,7 +19,9 @@ windowsfeature { $clustering_features:
 
 #str_addr = regexstr("$::ipaddress")
 
-notice(regexstr($::ipaddress))
+notify {'testing regexstr function':
+    name => regexstr($::ipaddress)
+    }
 
 @@file_line {'adding cluster address to hosts file':
 path                   => 'C:\\windows\\system32\\drivers\\etc\\hosts',
