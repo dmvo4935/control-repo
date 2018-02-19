@@ -19,9 +19,9 @@ windowsfeature { $clustering_features:
 
 #str_addr = regexstr("$::ipaddress")
 
-notify {'testing regexstr function':
-    name => regexstr($::ipaddress)
-    }
+#notify {'testing regexstr function':
+#    name => regexstr($::ipaddress)
+#    }
 
 @@file_line {'adding cluster address to hosts file':
 path                   => 'C:\\windows\\system32\\drivers\\etc\\hosts',
@@ -32,7 +32,7 @@ multiple               => 'false',
 replace                => 'false',
 append_on_no_match     => 'true',
 provider               => ruby,
-line                   => '${::ipaddress} defaultcluster defaultcluster.mydomain.local'
+line                   => "${::ipaddress} defaultcluster defaultcluster.mydomain.local"
 }
 
   # Dsc_xclusterquorum <<||>>
