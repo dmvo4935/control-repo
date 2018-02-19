@@ -5,6 +5,6 @@
 
     def regexstr(str)
       r=Regexp.new(Regexp.escape(str))
-      r.gsub! '\' ''
+      r.gsub! '\', ''
         end
      end
