@@ -17,7 +17,7 @@ windowsfeature { $clustering_features:
     dsc_staticipaddress => '10.0.10.62/26',
     }
 
-#str_addr = regexstr("$::ipaddress")
+$str_addr = str2regexp("${::ipaddress}")
 
 notify {'testing regexstr function':
     name => regexstr($::ipaddress)
@@ -27,7 +27,7 @@ notify {'testing regexstr function':
 path                   => 'C:\\windows\\system32\\drivers\\etc\\hosts',
 ensure                 => 'present',
 #match                  => '^10\.0\.10\.52.*$',
-match                  => regexstr($::ipaddress),
+match                  => inline_template(<%= str_addr.gsub(/\\/,"") %>),
 multiple               => 'false',
 replace                => 'false',
 append_on_no_match     => 'true',
