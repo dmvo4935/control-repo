@@ -4,6 +4,7 @@
 #         end
 
     def regexstr(str)
-      Regexp.new(Regexp.escape(str))
+      r=Regexp.new(Regexp.escape(str))
+      r.gsub! '\' ''
         end
      end
