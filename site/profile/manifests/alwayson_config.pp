@@ -52,8 +52,8 @@ if ($role=='primary')
      dsc_sqlserver	               => "${::fqdn}",
      dsc_psdscrunascredential           => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
      dsc_name	                       => 'DefaultAG',
-     dsc_endpointhostname	       => "${::fqdn}",
-     dsc_sqlinstancename	               => "MSSQLSERVER",
+ #    dsc_endpointhostname	       => "${::fqdn}",
+     dsc_sqlinstancename               => "MSSQLSERVER",
      dsc_ensure	                       => 'Present'
     }->
    
