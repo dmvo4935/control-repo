@@ -17,7 +17,7 @@ windowsfeature { $clustering_features:
     dsc_staticipaddress => '10.0.10.62/26',
     }
 
-$str_addr = str2regexp($::ipaddress)
+$str_addr = str2regexp("${::ipaddress}")
 
 notify {'testing str2regexp function':
     name => $str_addr
