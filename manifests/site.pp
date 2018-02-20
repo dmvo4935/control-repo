@@ -141,6 +141,11 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
      message => 'DSC has requested a reboot',
      when    => 'pending',
      }
+  
+   package {'sql-server-management-studio':
+     ensure   => 'installed',
+     provider => chocolatey
+   }
 }
 
 node 'ec2amaz-9u9kpm0.mydomain.local' {
