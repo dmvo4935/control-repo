@@ -1,6 +1,6 @@
 class profile::alwayson_config ($role) {
 
-$users = [ "NT SERVICE\ClusSvc", "NT AUTHORITY\SYSTEM" ]
+$users = [ "NT SERVICE\\ClusSvc", "NT AUTHORITY\\SYSTEM" ]
 $permissions = 'AlterAnyAvailabilityGroup,ViewServerState' 
 
 dsc_xsqlserveralwaysonservice {'Enable AlwaysOnService':
@@ -30,15 +30,15 @@ dsc_xsqlserverlogin {'Create login for cluster user':
    dsc_logintype	                => 'WindowsUser',
    } ->
 
-each($users) |$user| {
-   dsc_xsqlserverpermission {"Set Permissions to $user":
+#each($users) |$user| {
+   dsc_xsqlserverpermission {"Set Permissions":
     dsc_nodename	     => "${::fqdn}",
     dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
     dsc_instancename	    => 'MSSQLSERVER',
     dsc_ensure	            => 'Present',
-    dsc_principal	    => $user,
-    dsc_permission	    => $permissions,
-  }  
+    dsc_principal	    => "NT SERVICE\\ClusSvc",
+    dsc_permission	    => "AlterAnyAvailabilityGroup,ViewServerState",
+#  }  
 } ->
 
 if ($role=='primary')
