@@ -1,5 +1,8 @@
 class profile::alwayson_config ($role) {
 
+$users = [ 'NT SERVICE\ClusSvc', 'NT AUTHORITY\SYSTEM' ]
+$permissions = [ 'AlterAnyAvailabilityGroup', 'ViewServerState' ]
+
 dsc_xsqlserveralwaysonservice {'Enable AlwaysOnService':
   dsc_sqlserver	          => "${::fqdn}",
 #  dsc_restarttimeout	RestartTimeout - The length of time, in seconds, to wait for the service to restart. Default is 120 seconds.
@@ -32,8 +35,8 @@ dsc_xsqlserverpermission {'Set Permissions to ClusSvc and SYSTEM logins':
    dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
    dsc_instancename	    => 'MSSQLSERVER',
   dsc_ensure	            => 'Present',
-  dsc_principal	            => [ 'NT SERVICE\ClusSvc', 'NT AUTHORITY\SYSTEM' ],
-  dsc_permission	    => [ 'AlterAnyAvailabilityGroup', 'ViewServerState' ],
+  dsc_principal	            => $users,
+  dsc_permission	    => $permissions,
   } ->
 
 if ($role=='primary')
