@@ -102,9 +102,18 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 #        dsc_type              => 'NodeAndFileShareMajority',
 #   }
 
+   include chocolatey -> 
+   
+  chocolateysource {'chocolatey':
+   ensure   => present,
+   location => 'https://chocolatey.org/api/v2',
+   priority => 1,
+   }
+
    package {'sql-server-management-studio':
      ensure   => 'installed',
-     provider => chocolatey
+     provider => chocolatey,
+     require => Chocolateysource['chocolatey'],
    }
     
 }
