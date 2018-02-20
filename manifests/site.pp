@@ -102,7 +102,7 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 #        dsc_type              => 'NodeAndFileShareMajority',
 #   }
 
-   include chocolatey -> 
+   include chocolatey  
    
   chocolateysource {'chocolatey':
    ensure   => present,
