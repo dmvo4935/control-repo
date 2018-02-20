@@ -31,8 +31,7 @@ dsc_xsqlserverlogin {'Create login for cluster user':
    } ->
 
 each($users) |$user| {
-   dsc_xsqlserverpermission {'Set Permissions to ${user}':
-    name                     => $user,
+   dsc_xsqlserverpermission {"Set Permissions to $user":
     dsc_nodename	     => "${::fqdn}",
     dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
     dsc_instancename	    => 'MSSQLSERVER',
