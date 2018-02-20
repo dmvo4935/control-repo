@@ -1,6 +1,6 @@
 class profile::alwayson_config ($role) {
 
-$users = [ 'NT SERVICE\ClusSvc', 'NT AUTHORITY\SYSTEM' ]
+$users = [ "NT SERVICE\ClusSvc", "NT AUTHORITY\SYSTEM" ]
 $permissions = 'AlterAnyAvailabilityGroup,ViewServerState' 
 
 dsc_xsqlserveralwaysonservice {'Enable AlwaysOnService':
