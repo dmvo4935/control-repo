@@ -37,7 +37,7 @@ dsc_xsqlserverlogin {'Create login for cluster user':
     dsc_instancename	    => 'MSSQLSERVER',
     dsc_ensure	            => 'Present',
     dsc_principal	    => "NT SERVICE\\ClusSvc",
-    dsc_permission	    => "AlterAnyAvailabilityGroup,ViewServerState",
+    dsc_permission	    => ['AlterAnyAvailabilityGroup','ViewServerState'],
 #  }  
 } ->
 
