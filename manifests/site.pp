@@ -102,6 +102,11 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 #        dsc_type              => 'NodeAndFileShareMajority',
 #   }
 
+   package {'sql-server-management-studio':
+     ensure   => 'installed',
+     provider => chocolatey
+   }
+    
 }
 
 node 'ec2amaz-p5g3loa.mydomain.local' {
@@ -142,10 +147,6 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
      when    => 'pending',
      }
   
-   package {'sql-server-management-studio':
-     ensure   => 'installed',
-     provider => chocolatey
-   }
 }
 
 node 'ec2amaz-9u9kpm0.mydomain.local' {
