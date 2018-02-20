@@ -4,6 +4,7 @@
 #         end
 
     def str2regexp(str)
-      Regexp.new(Regexp.escape(str))
+  #    Regexp.new(Regexp.escape(str))
+      Regexp.escape(str)
        end
      end
