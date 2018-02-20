@@ -20,7 +20,7 @@ windowsfeature { $clustering_features:
 $str_addr = str2regexp("${::ipaddress}")
 
 notify {'testing str2regexp function':
-    name => '^${str_addr}.*$'
+    name => "^${str_addr}.*\$"
     }
 
 @@file_line {'adding cluster address to hosts file':
