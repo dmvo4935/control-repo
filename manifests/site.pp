@@ -148,6 +148,8 @@ node 'ec2amaz-9u9kpm0.mydomain.local' {
   class { 'role::sql_server':}
 
   include profile::cluster_node_secondary
+
+  class { 'profile::alwayson_config': role => 'secondary' }
 }
 
 node 'ec2amaz-bdfe0vk.mydomain.local' {
@@ -155,4 +157,6 @@ node 'ec2amaz-bdfe0vk.mydomain.local' {
   class { 'role::sql_server': }
   
   include profile::cluster_node
+
+  class { 'profile::alwayson_config': role => 'primary' }
 }
