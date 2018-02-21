@@ -12,7 +12,7 @@ dsc_xsqlserveralwaysonservice {'Enable AlwaysOnService':
  } -> 
 
 dsc_xsqlserverendpoint {'Create endpoint':
-   dsc_sqlserver            => "${::fqdn}",
+   dsc_sqlserver            => $trusted['hostname'],
    dsc_psdscrunascredential =>	{ 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
    dsc_ipaddress            => 	"${::ipaddress}", 
    dsc_ensure	            =>  'Present',
@@ -60,10 +60,10 @@ if ($role=='primary')
      dsc_failovermode                   => 'Automatic',
      dsc_connectionmodeinprimaryrole    => 'AllowAllConnections',
    #  dsc_sqlserver	               => "${::fqdn}",
-     dsc_sqlserver	               =>  $::ipaddress,
+     dsc_sqlserver	               =>  $trusted['hostname'],
      dsc_psdscrunascredential           => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
      dsc_name	                       => 'DefaultAG',
- #    dsc_endpointhostname	       => "${::fqdn}",
+     dsc_endpointhostname	       => "${::fqdn}",
      dsc_sqlinstancename               => "MSSQLSERVER",
      dsc_ensure	                       => 'Present'
     }->
@@ -90,8 +90,8 @@ if ($role=='primary')
     dsc_connectionmodeinprimaryrole    => 'AllowAllConnections',
     dsc_sqlserver	               => $trusted['hostname'], 
     dsc_psdscrunascredential	       =>  { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
-    dsc_name	                       => $::ipaddress,
-   # dsc_endpointhostname	       => "${::fqdn}", 
+    dsc_name	                       => $trusted['hostname'],
+    dsc_endpointhostname	       => "${::fqdn}", 
     dsc_sqlinstancename	               => 'MSSQLSERVER',
     dsc_ensure	                       => 'Present',
     dsc_availabilitygroupname          => 'DefaultAG'
