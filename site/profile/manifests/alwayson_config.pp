@@ -30,15 +30,15 @@ dsc_xsqlserverlogin {'Create login for cluster user':
    dsc_logintype	                => 'WindowsUser',
    } ->
 
-#each($users) |$user| {
-   dsc_xsqlserverpermission {"Set Permissions":
+each($users) |$user| {
+   dsc_xsqlserverpermission {"$user":
     dsc_nodename	     => "${::fqdn}",
     dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
     dsc_instancename	    => 'MSSQLSERVER',
     dsc_ensure	            => 'Present',
     dsc_principal	    => "NT SERVICE\\ClusSvc",
     dsc_permission	    => ['AlterAnyAvailabilityGroup','ViewServerState'],
-#  }  
+  }  
 } ->
 
 if ($role=='primary')
