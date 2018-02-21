@@ -58,11 +58,11 @@ if ($role=='primary')
      dsc_ensure	                       => 'Present'
     }->
    
-   dsc_xsqlserveravailabilitygrouplistener {'DfltAGListener':
+   dsc_xsqlserveravailabilitygrouplistener {'Create DefaultAG Listener':
      dsc_nodename	     => "${::fqdn}",
      dsc_availabilitygroup   => "DefaultAG",
      dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
-     dsc_name	              => 'DefaultAGListener',
+     dsc_name	              => 'DfltAGListener',
      dsc_instancename	      => 'MSSQLSERVER',
      dsc_ipaddress	      => '10.0.10.61/255.255.255.192',
      dsc_ensure	              => 'Present',
