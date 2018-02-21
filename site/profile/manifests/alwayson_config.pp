@@ -75,6 +75,7 @@ if ($role=='primary')
     dsc_connectionmodeinsecondaryrole  => 'AllowAllConnections',
    # dsc_sqlservernetname	       => '' SqlServerNetName - Output the NetName property from the SQL Server object. Used by Get-TargetResource
     dsc_failovermode	               => 'Automatic',
+    dsc_primaryreplicasqlserver        => '10.0.10.52',
     dsc_primaryreplicasqlinstancename  => 'MSSQLSERVER',
     dsc_connectionmodeinprimaryrole    => 'AllowAllConnections',
     dsc_sqlserver	               => $trusted['hostname'], 
