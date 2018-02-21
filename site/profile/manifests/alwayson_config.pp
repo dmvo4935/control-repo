@@ -58,7 +58,7 @@ if ($role=='primary')
      dsc_ensure	                       => 'Present'
     }->
    
-   dsc_xsqlserveravailabilitygrouplistener {'Create AG listener':
+   dsc_xsqlserveravailabilitygrouplistener {'DfltAGListener':
      dsc_nodename	     => "${::fqdn}",
      dsc_availabilitygroup   => "DefaultAG",
      dsc_psdscrunascredential => { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
