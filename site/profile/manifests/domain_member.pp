@@ -13,4 +13,8 @@ class { 'domain_membership':
   join_options => '3',
 }
 
+  windowsfeature {'Windows-defender-features':
+     ensure  => absent,
+  }
+
 }

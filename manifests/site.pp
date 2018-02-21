@@ -30,10 +30,6 @@ node default {
   # Example:
   #   class { 'my_class': }
 
-  windowsfeature {'Windows-defender-features':
-     ensure  => absent,
-  }
-
 }
 
 node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
