@@ -112,6 +112,12 @@ node 'ec2amaz-05d23ld.mydomain.local' {
    priority => 1,
    }
 
+   package {'awscli':
+   ensure   => 'installed',
+   provider => chocolatey,
+   notify   => Class['profile::mount_iso'],
+  }
+
    package {'sql-server-management-studio':
      ensure   => 'installed',
      provider => chocolatey,
