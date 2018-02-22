@@ -36,15 +36,15 @@ provider               => ruby,
 line                   => "${::ipaddress} defaultcluster defaultcluster.mydomain.local"
 }
 
-  # Dsc_xclusterquorum <<||>>
-   dsc_xclusterquorum {'Connect witness': 
-        dsc_resource    => "\\\\10.0.10.7\\witness",
-        dsc_psdscrunascredential  => {
-           'user'     => 'mydomain.local\administrator',
-           'password' => 'Supersecret#123'
-        },
-        dsc_issingleinstance  => 'Yes',
-        dsc_type              => 'NodeAndFileShareMajority',
-   }
+   Dsc_xclusterquorum <<||>>
+  # dsc_xclusterquorum {'Connect witness': 
+  #      dsc_resource    => "\\\\10.0.10.7\\witness",
+  #      dsc_psdscrunascredential  => {
+  #         'user'     => 'mydomain.local\administrator',
+  #         'password' => 'Supersecret#123'
+  #      },
+  #      dsc_issingleinstance  => 'Yes',
+  #      dsc_type              => 'NodeAndFileShareMajority',
+  # }
 
 }

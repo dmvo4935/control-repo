@@ -93,15 +93,16 @@ node 'ec2amaz-05d23ld.mydomain.local' {
 
 #    $witness_address="\\\\$::fqdn\\Witness\\"
 
-#    @@dsc_xclusterquorum {'Connect witness': 
-#        dsc_resource    => "\\10.0.10.7\witness",
-#        dsc_psdscrunascredential  => {
-#           'user'     => 'mydomain.local\administrator',
-#           'password' => 'Supersecret#123'
-#        },
-#        dsc_issingleinstance  => 'Yes',
-#        dsc_type              => 'NodeAndFileShareMajority',
-#   }
+    @@dsc_xclusterquorum {'Connect witness': 
+        dsc_resource    => "\\\\${::ipaddress}\\witness",
+        dsc_psdscrunascredential  => {
+           'user'     => 'mydomain.local\administrator',
+           'password' => 'Supersecret#123'
+        },
+        dsc_issingleinstance  => 'Yes',
+        dsc_type              => 'NodeAndFileShareMajority',
+        require               => Dsc_xcluster['DefaultCluster']
+   }
 
    include chocolatey  
    
