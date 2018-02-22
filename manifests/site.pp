@@ -51,7 +51,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
      }
 }
 
-node 'ec2amaz-05d23ld.mydomain.local' {
+node 'ec2amaz-2i3051d.eu-central-1.compute.internal' {
    
    $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools', 'RSAT-ADDS']
    
@@ -166,7 +166,7 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
   
 }
 
-node 'ec2amaz-9u9kpm0.mydomain.local' {
+node 'ec2amaz-u2tvmiu.eu-central-1.compute.internal' {
   
   class { 'role::sql_server':}
 
@@ -175,7 +175,7 @@ node 'ec2amaz-9u9kpm0.mydomain.local' {
   class { 'profile::alwayson_config': role => 'secondary' }
 }
 
-node 'ec2amaz-bdfe0vk.mydomain.local' {
+node 'ec2amaz-nejlvpg.eu-central-1.compute.internal' {
 
   class { 'role::sql_server': }
   
