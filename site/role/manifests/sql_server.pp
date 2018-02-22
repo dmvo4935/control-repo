@@ -6,7 +6,7 @@ class role::sql_server {
 
    include profile::domain_member
    #include profile::sql_server_install
-   #include profile::sql_server_setup
+   include profile::sql_server_setup
 
 #   exec {'setting DNS Suffix':
 #     command      => 'Set-DnsClientGlobalSetting -SuffixSearchList ("mydomain.local")',
