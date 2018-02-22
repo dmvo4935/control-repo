@@ -13,6 +13,11 @@ class { 'domain_membership':
   join_options => '3',
 }
 
+ exec {'setting DNS Suffix':
+     command      => 'Set-DnsClientGlobalSetting -SuffixSearchList ("mydomain.local")',
+     provider     => powershell,
+     } 
+
   windowsfeature {'Windows-defender-features':
      ensure  => absent,
   }

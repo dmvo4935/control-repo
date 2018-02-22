@@ -8,10 +8,10 @@ class role::sql_server {
    #include profile::sql_server_install
    #include profile::sql_server_setup
 
-   exec {'setting DNS Suffix':
-     command      => 'Set-DnsClientGlobalSetting -SuffixSearchList ("mydomain.local")',
-     provider     => powershell,
-     }
+#   exec {'setting DNS Suffix':
+#     command      => 'Set-DnsClientGlobalSetting -SuffixSearchList ("mydomain.local")',
+#     provider     => powershell,
+#     }
 #   include profile::cluster_node
  
      reboot {'dsc_reboot':
