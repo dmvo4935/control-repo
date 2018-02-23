@@ -78,24 +78,29 @@ if ($role=='primary')
      dsc_ensure	              => 'Present',
      dsc_port                 => '1433'
     }
-   } 
-   else {
-   dsc_xsqlserveralwaysonavailabilitygroupreplica {'Create secondary replica':
+  
+   @@dsc_xsqlserveralwaysonavailabilitygroupreplica {'Create secondary replica':
     dsc_availabilitymode               => 'SynchronousCommit',
     dsc_connectionmodeinsecondaryrole  => 'AllowAllConnections',
-   # dsc_sqlservernetname	       => '' SqlServerNetName - Output the NetName property from the SQL Server object. Used by Get-TargetResource
-    dsc_failovermode	               => 'Automatic',
-    dsc_primaryreplicasqlserver        => '10.0.10.52',
+   # dsc_sqlservernetname              => '' SqlServerNetName - Output the NetName property from the SQL Server object. Used by Get-TargetResource
+    dsc_failovermode                   => 'Automatic',
+    dsc_primaryreplicasqlserver        => "${::ipaddress}",
     dsc_primaryreplicasqlinstancename  => 'MSSQLSERVER',
     dsc_connectionmodeinprimaryrole    => 'AllowAllConnections',
-    dsc_sqlserver	               => $trusted['hostname'], 
-    dsc_psdscrunascredential	       =>  { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
-    dsc_name	                       => $trusted['hostname'],
-    dsc_endpointhostname	       => "${::fqdn}", 
-    dsc_sqlinstancename	               => 'MSSQLSERVER',
-    dsc_ensure	                       => 'Present',
+    dsc_sqlserver                      => $trusted['hostname'],
+    dsc_psdscrunascredential           =>  { 'user' => 'mydomain\administrator', 'password'  => 'Supersecret#123' },
+    dsc_name                           => $trusted['hostname'],
+    dsc_endpointhostname               => "${::fqdn}",
+    dsc_sqlinstancename                => 'MSSQLSERVER',
+    dsc_ensure                         => 'Present',
     dsc_availabilitygroupname          => 'DefaultAG'
-    } 
+    }
+  
+   } 
+   else {
+   
+   Dsc_xsqlserveralwaysonavailabilitygroupreplica <<||>>
+   
    }
 
 }
