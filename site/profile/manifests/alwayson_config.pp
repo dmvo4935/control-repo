@@ -66,7 +66,7 @@ if ($role=='primary')
      dsc_endpointhostname	       => "${::fqdn}",
      dsc_sqlinstancename               => "MSSQLSERVER",
      dsc_ensure	                       => 'Present'
-    }->
+    } ->
    
    dsc_xsqlserveravailabilitygrouplistener {'Create DefaultAG Listener':
      dsc_nodename	     => "${::fqdn}",
@@ -77,7 +77,7 @@ if ($role=='primary')
      dsc_ipaddress	      => '10.0.10.61/255.255.255.192',
      dsc_ensure	              => 'Present',
      dsc_port                 => '1433'
-    }
+    } -> 
   
    @@dsc_xsqlserveralwaysonavailabilitygroupreplica {'Create secondary replica':
     dsc_availabilitymode               => 'SynchronousCommit',
