@@ -32,7 +32,7 @@ node default {
 
 }
 
-node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
+node 'ec2amaz-pcdm8f8.mydomain.local' {
     windowsfeature { 'Web-WebServer':
     ensure             => present,
     installsubfeatures => true,
@@ -51,7 +51,7 @@ node 'ec2amaz-pcdm8f8.eu-central-1.compute.internal' {
      }
 }
 
-node 'ec2amaz-2i3051d.eu-central-1.compute.internal' {
+node 'ec2amaz-2i3051d.mydomain.local' {
    
    $adfeatures = ['AD-Domain-Services', 'RSAT-AD-Tools', 'RSAT-ADDS']
    
@@ -166,7 +166,7 @@ node 'ec2amaz-p5g3loa.mydomain.local' {
   
 }
 
-node 'ec2amaz-u2tvmiu.eu-central-1.compute.internal' {
+node 'ec2amaz-u2tvmiu.mydomain.local' {
   
   class { 'role::sql_server':}
 
@@ -175,7 +175,7 @@ node 'ec2amaz-u2tvmiu.eu-central-1.compute.internal' {
   class { 'profile::alwayson_config': role => 'secondary' }
 }
 
-node 'ec2amaz-nejlvpg.eu-central-1.compute.internal' {
+node 'ec2amaz-nejlvpg.mydomain.local' {
 
   class { 'role::sql_server': }
   
