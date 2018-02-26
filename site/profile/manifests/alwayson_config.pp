@@ -49,7 +49,7 @@ dsc_xsqlserverlogin {'Create login for cluster user':
     dsc_principal           => "NT AUTHORITY\\SYSTEM",
     dsc_permission          => ['AlterAnyAvailabilityGroup','ViewServerState'],
 #  } 
-} ->
+} 
 
 if ($role=='primary')
    {
@@ -66,6 +66,7 @@ if ($role=='primary')
      dsc_endpointhostname	       => "${::fqdn}",
      dsc_sqlinstancename               => "MSSQLSERVER",
      dsc_ensure	                       => 'Present'
+     require                           => Dsc_xsqlserverpermission['ClusSvc_perms']
     } ->
    
    dsc_xsqlserveravailabilitygrouplistener {'Create DefaultAG Listener':
