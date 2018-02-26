@@ -65,7 +65,7 @@ if ($role=='primary')
      dsc_name	                       => 'DefaultAG',
      dsc_endpointhostname	       => "${::fqdn}",
      dsc_sqlinstancename               => "MSSQLSERVER",
-     dsc_ensure	                       => 'Present'
+     dsc_ensure	                       => 'Present',
      require                           => Dsc_xsqlserverpermission['ClusSvc_perms']
     } ->
    
